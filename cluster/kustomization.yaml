@@ -5,4 +5,5 @@ resources:
   - applications.yaml
   - components.yaml
   - git-repositories.yaml
+  - configmaps.yaml
 

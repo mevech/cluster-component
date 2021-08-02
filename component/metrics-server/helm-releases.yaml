@@ -1,0 +1,26 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cluster-autoscaler
+spec:
+  chart:
+    spec:
+      chart: helm/metrics-server/metrics-server-2.11.1.tgz
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  interval: 1m
+  values:
+    image:
+      repository: k8s.gcr.io/metrics-server/metrics-server
+      tag: v0.3.6
+  valuesFrom:
+    - kind: ConfigMap
+      name: metrics-server-configmap
+      valuesKey: values.yaml
