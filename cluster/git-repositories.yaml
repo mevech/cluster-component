@@ -20,6 +20,6 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: tmp
+    branch: main
   url: 
     https://github.com/mevech/cluster-component.git
