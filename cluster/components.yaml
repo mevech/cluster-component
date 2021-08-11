@@ -9,7 +9,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./component/flux
+  path: ./${component_path}/flux
   prune: true
   validation: client
 
@@ -28,17 +28,3 @@ spec:
   prune: true
   validation: client
 
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-kind: Kustomization
-metadata:
-  name: cluster-configuration
-  namespace: flux-system
-spec:
-  interval: 1m
-  sourceRef:
-    kind: GitRepository
-    name: cluster-configuration
-  path: ./cluster
-  prune: true
-  validation: client

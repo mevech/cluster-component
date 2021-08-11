@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - applications.yaml
   - components.yaml
+  - gitops-components.yaml
   - git-repositories.yaml
   - configmaps.yaml
 

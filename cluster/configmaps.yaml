@@ -9,3 +9,12 @@ data:
     image:
       repository: k8s.gcr.io/metrics-server/metrics-server
       tag: v0.4.2
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: var-sub-configmap
+  namespace: kube-system
+data:
+  component-path: "component"
+
